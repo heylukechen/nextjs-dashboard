@@ -14,11 +14,7 @@ import { useActionState } from "react";
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState: State = { message: null, errors: {} };
-
   const [state, formAction] = useActionState(createInvoice, initialState);
-
-  // Ensure state is always defined
-  const { errors = {} } = state || {}; // Default to an empty object if state is undefined
 
   return (
     <form action={formAction}>
